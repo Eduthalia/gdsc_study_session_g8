@@ -1,4 +1,7 @@
+import 'package:t_d/add_task.dart';
+import 'package:t_d/create_task.dart';
 import 'package:flutter/material.dart';
+import 'package:t_d/tasks.dart';
 
 void main() {
   runApp(const MyApp());
@@ -7,71 +10,58 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
+  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-        
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(),
+      routes: {
+        '/tasks': (context) => ToDo(),
+        '/homepage': (context) => MyApp(),
+        '/createtask': (context) => createTask(),
+        '/add_task': (context) => addtask(),
+      },
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-   
-      _counter++;
-    });
-  }
+class MyHomePage extends StatelessWidget {
+  const MyHomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
-      appBar: AppBar(
-   
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-     
-        title: Text(widget.title),
-      ),
+      backgroundColor: const Color.fromARGB(230, 239, 133, 80),
       body: Center(
-       
         child: Column(
-          
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Image.asset(
+              'assets/images/stickman-removebg-preview.png',
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
+            const SizedBox(
+              height: 100,
             ),
+            OutlinedButton(
+              onPressed: () {
+                //navigate to todo list page
+                Navigator.pushNamed(context, '/tasks');
+              },
+              style: OutlinedButton.styleFrom(
+                foregroundColor: Colors.white,
+                backgroundColor: Colors.blue,
+              ),
+              child: const Text('Get Started'),
+            )
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), 
     );
   }
 }
