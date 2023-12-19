@@ -43,7 +43,7 @@ class MyHomePage extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             Image.asset(
-              'assets/images/stickman-removebg-preview.png',
+              'assets/images/stickfigure.png',
             ),
             const SizedBox(
               height: 100,
