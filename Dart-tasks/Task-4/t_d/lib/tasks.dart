@@ -14,7 +14,7 @@ class ToDo extends StatelessWidget {
           title: const Text(" ToDo List "),
           leading: IconButton(
               onPressed: () {
-                //navigate to homepage
+                
                 Navigator.pushNamed(context, '/homepage');
               },
               icon: Icon(Icons.chevron_left)),
@@ -28,7 +28,7 @@ class ToDo extends StatelessWidget {
           child: ListView(
             children: [
               Image.asset(
-                'assets/images/stickman-removebg-preview.png',
+                'assets/images/stickman.png',
               ),
               const Text("Tasks List"),
               const SizedBox(
@@ -75,7 +75,7 @@ class ToDo extends StatelessWidget {
               ),
               OutlinedButton(
                 onPressed: () {
-                  //navigate to create task page
+                  
                   Navigator.pushNamed(context, '/createtask');
                 },
                 child: Text("Create Task"),
