@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
         '/tasks': (context) => ToDo(),
         '/homepage': (context) => MyApp(),
         '/createtask': (context) => createTask(),
-        '/add_task': (context) => addtask(),
+        '/add_task': (context) => add_task(),
       },
     );
   }
