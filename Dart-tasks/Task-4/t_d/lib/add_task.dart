@@ -10,7 +10,7 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
+  
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -43,14 +43,14 @@ class MyHomePage extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             Image.asset(
-              'assets/images/stickman-removebg-preview.png',
+              'assets/images/stick.png',
             ),
             const SizedBox(
               height: 100,
             ),
             OutlinedButton(
               onPressed: () {
-                //navigate to todo list page
+                
                 Navigator.pushNamed(context, '/tasks');
               },
               style: OutlinedButton.styleFrom(
